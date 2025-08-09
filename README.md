@@ -1,40 +1,78 @@
 # Indian-Startup-Funding-Analysis
------------>
-This notebook analyzes startup funding data to identify trends, top sectors, top startups, and investment type distribution.
+##📌 Overview
 
-Data Source
-The data used in this analysis is from the "startup_funding.csv" file.
+This project analyzes startup funding data from startup_funding.csv. It performs data cleaning, transformation, aggregation, and visualization to uncover trends such as:
 
-Analysis Steps
-Data Loading and Initial Inspection: The notebook loads the data into a pandas DataFrame and displays the head and information about the DataFrame to understand its structure and content.
+* Funding patterns over time
+* Top sectors, cities, startups, and investors
+* Popular investment types
 
-Data Cleaning and Preparation:
+The analysis includes both numerical summaries and visualizations.
 
-The 'Date dd/mm/yyyy' column is converted to datetime objects.
-The 'Amount in USD' column is cleaned by removing commas and converting it to numeric type.
-Funding Trend Analysis: The total funding amount is calculated and displayed over time, aggregated by month.
+---
 
-Top Sectors Analysis: The top 5 industry verticals based on the number of startups are identified and displayed.
+## 📂 Features
 
-Top Startups Analysis: The top 5 startups based on the number of funding rounds are identified and displayed.
+1. *Data Loading & Cleaning*
 
-Investment Type Distribution: The distribution of different investment types is calculated and displayed.
+   * Reads CSV file using Pandas
+   * Removes unnecessary columns (Remarks)
+   * Fills missing values with "Unknown"
+   * Cleans numerical and date formats
+   * Standardizes text fields (lowercase, no extra spaces, removes non-ASCII)
 
-Visualization: The notebook generates several plots to visualize the findings:
+2. *Feature Engineering*
 
-Startup Funding Trend Over Time (Line plot)
-Top 5 Industry Verticals by Count (Bar plot)
-Top 5 Cities by Funding Amount (Bar plot)
-Top 5 Startups by Funding Amount (Bar plot)
-Distribution of Investment Types (Bar plot)
-Visualizations
-The visualizations provide insights into:
+   * Extracts FundingYear and FundingMonth from the funding date
 
-How startup funding has changed over time.
-Which industry verticals have the most startups.
-Which cities receive the most funding.
-Which startups have received the most funding rounds.
-The prevalence of different investment types.
+3. *Data Aggregations*
+
+   * Yearly and monthly funding trends
+   * Top 10 sectors, cities, and startups by funding
+   * Top 10 investors by total funding and number of deals
+   * Investment types by funding and deal count
+
+4. *Visualizations*
+
+   * Line plots for funding trends
+   * Bar charts for top sectors, cities, startups, investors, and investment types
+
+---
+
+## 🛠 Requirements
+
+Install dependencies using:
+
+bash
+pip install pandas matplotlib seaborn
 
 
-https://colab.research.google.com/drive/1h3SHZcWJcFodYRlHosio_3NxubVerKto#scrollTo=-_kElhP_c3rY
+---
+
+## 📜 How to Run
+
+1. Place your startup_funding.csv file in the /content/ directory or update the path in the script.
+2. Run the script:
+
+bash
+python mainn.py
+
+
+3. View printed summaries in the console and visualizations in pop-up windows.
+
+---
+
+## 📊 Output
+
+The script produces:
+
+* Data summaries (.head() and .info())
+* Aggregated funding statistics
+* Visualizations for:
+
+  * Yearly funding trends
+  * Top sectors, cities, startups
+  * Top investors (funding & deals)
+  * Top investment types
+
+  URL : https://colab.research.google.com/drive/1h3SHZcWJcFodYRlHosio_3NxubVerKto#scrollTo=-_kElhP_c3rY
